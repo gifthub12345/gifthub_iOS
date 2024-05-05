@@ -19,6 +19,8 @@
 		C7BD5B2F2BE77B610060CC38 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B2E2BE77B610060CC38 /* View+.swift */; };
 		C7BD5B312BE77BB10060CC38 /* DialogContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B302BE77BB10060CC38 /* DialogContent.swift */; };
 		C7BD5B332BE786A00060CC38 /* JoinDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B322BE786A00060CC38 /* JoinDialogView.swift */; };
+		C7BD5B362BE78A5C0060CC38 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B352BE78A5C0060CC38 /* CategoryView.swift */; };
+		C7BD5B382BE7908C0060CC38 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B372BE7908C0060CC38 /* CategoryGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		C7BD5B2E2BE77B610060CC38 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		C7BD5B302BE77BB10060CC38 /* DialogContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogContent.swift; sourceTree = "<group>"; };
 		C7BD5B322BE786A00060CC38 /* JoinDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDialogView.swift; sourceTree = "<group>"; };
+		C7BD5B352BE78A5C0060CC38 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		C7BD5B372BE7908C0060CC38 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +92,8 @@
 		C7BD5B1D2BE75F6F0060CC38 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				C7BD5B242BE763B10060CC38 /* Components */,
+				C7BD5B342BE78A450060CC38 /* CategoryView */,
+				C7BD5B242BE763B10060CC38 /* Dialog */,
 				C7BD5B212BE761240060CC38 /* NoEnterView */,
 				C7BD5B1E2BE760230060CC38 /* LoginView */,
 			);
@@ -111,7 +116,7 @@
 			path = NoEnterView;
 			sourceTree = "<group>";
 		};
-		C7BD5B242BE763B10060CC38 /* Components */ = {
+		C7BD5B242BE763B10060CC38 /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
 				C7BD5B2A2BE77AA50060CC38 /* CustomDialog.swift */,
@@ -120,7 +125,7 @@
 				C7BD5B252BE7646B0060CC38 /* MakeRoomDialogView.swift */,
 				C7BD5B322BE786A00060CC38 /* JoinDialogView.swift */,
 			);
-			path = Components;
+			path = Dialog;
 			sourceTree = "<group>";
 		};
 		C7BD5B272BE77A730060CC38 /* Utils */ = {
@@ -137,6 +142,15 @@
 				C7BD5B2E2BE77B610060CC38 /* View+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C7BD5B342BE78A450060CC38 /* CategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B352BE78A5C0060CC38 /* CategoryView.swift */,
+				C7BD5B372BE7908C0060CC38 /* CategoryGridView.swift */,
+			);
+			path = CategoryView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,11 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7BD5B382BE7908C0060CC38 /* CategoryGridView.swift in Sources */,
 				C7BD5B2D2BE77B000060CC38 /* DialogPresentation.swift in Sources */,
 				C7BD5B202BE760330060CC38 /* LoginView.swift in Sources */,
 				C7BD5B122BE75D6B0060CC38 /* ContentView.swift in Sources */,
 				C7BD5B262BE7646B0060CC38 /* MakeRoomDialogView.swift in Sources */,
 				C7BD5B2F2BE77B610060CC38 /* View+.swift in Sources */,
+				C7BD5B362BE78A5C0060CC38 /* CategoryView.swift in Sources */,
 				C7BD5B232BE761460060CC38 /* NoEnterView.swift in Sources */,
 				C7BD5B332BE786A00060CC38 /* JoinDialogView.swift in Sources */,
 				C7BD5B2B2BE77AA50060CC38 /* CustomDialog.swift in Sources */,
