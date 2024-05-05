@@ -19,6 +19,7 @@ struct CategoryGridView: View {
                 .shadow(color: Color.black.opacity(0.5), radius: 10, x: 5, y: 12)
             Text(category.rawValue)
                 .font(.system(size: 16))
+                .foregroundStyle(.black)
         }.padding(.bottom, 16)
     }
 }

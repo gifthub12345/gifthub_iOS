@@ -35,7 +35,10 @@ struct CategoryView: View {
             ScrollView {
                 LazyVGrid(columns: columns){
                     ForEach(Category.allCases, id: \.self) { category in
-                        CategoryGridView(category: category)
+                        NavigationLink(destination: CategoryDetailView(category: category)) {
+                                                  CategoryGridView(category: category)
+                                              }
+
                     }
                 }
 
