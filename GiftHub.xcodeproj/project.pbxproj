@@ -11,6 +11,14 @@
 		C7BD5B122BE75D6B0060CC38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B112BE75D6B0060CC38 /* ContentView.swift */; };
 		C7BD5B142BE75D6C0060CC38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BD5B132BE75D6C0060CC38 /* Assets.xcassets */; };
 		C7BD5B172BE75D6C0060CC38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BD5B162BE75D6C0060CC38 /* Preview Assets.xcassets */; };
+		C7BD5B202BE760330060CC38 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B1F2BE760330060CC38 /* LoginView.swift */; };
+		C7BD5B232BE761460060CC38 /* NoEnterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B222BE761460060CC38 /* NoEnterView.swift */; };
+		C7BD5B262BE7646B0060CC38 /* MakeRoomDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B252BE7646B0060CC38 /* MakeRoomDialogView.swift */; };
+		C7BD5B2B2BE77AA50060CC38 /* CustomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B2A2BE77AA50060CC38 /* CustomDialog.swift */; };
+		C7BD5B2D2BE77B000060CC38 /* DialogPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B2C2BE77B000060CC38 /* DialogPresentation.swift */; };
+		C7BD5B2F2BE77B610060CC38 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B2E2BE77B610060CC38 /* View+.swift */; };
+		C7BD5B312BE77BB10060CC38 /* DialogContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B302BE77BB10060CC38 /* DialogContent.swift */; };
+		C7BD5B332BE786A00060CC38 /* JoinDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B322BE786A00060CC38 /* JoinDialogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		C7BD5B112BE75D6B0060CC38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7BD5B132BE75D6C0060CC38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7BD5B162BE75D6C0060CC38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7BD5B1F2BE760330060CC38 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C7BD5B222BE761460060CC38 /* NoEnterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoEnterView.swift; sourceTree = "<group>"; };
+		C7BD5B252BE7646B0060CC38 /* MakeRoomDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomDialogView.swift; sourceTree = "<group>"; };
+		C7BD5B2A2BE77AA50060CC38 /* CustomDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialog.swift; sourceTree = "<group>"; };
+		C7BD5B2C2BE77B000060CC38 /* DialogPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogPresentation.swift; sourceTree = "<group>"; };
+		C7BD5B2E2BE77B610060CC38 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		C7BD5B302BE77BB10060CC38 /* DialogContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogContent.swift; sourceTree = "<group>"; };
+		C7BD5B322BE786A00060CC38 /* JoinDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDialogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +67,8 @@
 		C7BD5B0E2BE75D6B0060CC38 /* GiftHub */ = {
 			isa = PBXGroup;
 			children = (
+				C7BD5B272BE77A730060CC38 /* Utils */,
+				C7BD5B1D2BE75F6F0060CC38 /* Presentation */,
 				C7BD5B0F2BE75D6B0060CC38 /* GiftHubApp.swift */,
 				C7BD5B112BE75D6B0060CC38 /* ContentView.swift */,
 				C7BD5B132BE75D6C0060CC38 /* Assets.xcassets */,
@@ -65,6 +83,60 @@
 				C7BD5B162BE75D6C0060CC38 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C7BD5B1D2BE75F6F0060CC38 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B242BE763B10060CC38 /* Components */,
+				C7BD5B212BE761240060CC38 /* NoEnterView */,
+				C7BD5B1E2BE760230060CC38 /* LoginView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C7BD5B1E2BE760230060CC38 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B1F2BE760330060CC38 /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		C7BD5B212BE761240060CC38 /* NoEnterView */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B222BE761460060CC38 /* NoEnterView.swift */,
+			);
+			path = NoEnterView;
+			sourceTree = "<group>";
+		};
+		C7BD5B242BE763B10060CC38 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B2A2BE77AA50060CC38 /* CustomDialog.swift */,
+				C7BD5B2C2BE77B000060CC38 /* DialogPresentation.swift */,
+				C7BD5B302BE77BB10060CC38 /* DialogContent.swift */,
+				C7BD5B252BE7646B0060CC38 /* MakeRoomDialogView.swift */,
+				C7BD5B322BE786A00060CC38 /* JoinDialogView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C7BD5B272BE77A730060CC38 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B282BE77A820060CC38 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C7BD5B282BE77A820060CC38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B2E2BE77B610060CC38 /* View+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +209,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7BD5B2D2BE77B000060CC38 /* DialogPresentation.swift in Sources */,
+				C7BD5B202BE760330060CC38 /* LoginView.swift in Sources */,
 				C7BD5B122BE75D6B0060CC38 /* ContentView.swift in Sources */,
+				C7BD5B262BE7646B0060CC38 /* MakeRoomDialogView.swift in Sources */,
+				C7BD5B2F2BE77B610060CC38 /* View+.swift in Sources */,
+				C7BD5B232BE761460060CC38 /* NoEnterView.swift in Sources */,
+				C7BD5B332BE786A00060CC38 /* JoinDialogView.swift in Sources */,
+				C7BD5B2B2BE77AA50060CC38 /* CustomDialog.swift in Sources */,
 				C7BD5B102BE75D6B0060CC38 /* GiftHubApp.swift in Sources */,
+				C7BD5B312BE77BB10060CC38 /* DialogContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
