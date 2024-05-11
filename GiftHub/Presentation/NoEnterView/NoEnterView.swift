@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct NoEnterView: View {
-    @State private var dialogPresentation = DialogPresentation()
+    @Environment(DIContainer.self) var container
+//    @State private var dialogPresentation = DialogPresentation()
+    
     var body: some View {
+        @Bindable var dialogPresentation = container.dialogPresentation
         VStack {
         Text("현재 참여중인 방이 없습니다.\n방을 참여하거나 새로 개설해주세요")
             .font(.system(size: 24, weight: .medium))
@@ -18,7 +21,8 @@ struct NoEnterView: View {
         Image("noRoom")
             .padding(.bottom, 48)
         Button(action: {
-            dialogPresentation.show(content: .joinDialog(isPresented: $dialogPresentation.isPresented))
+            container.dialogPresentation.show(content: .joinDialog(isPresented: $dialogPresentation.isPresented, isSucceed: $dialogPresentation.isSucceed))
+            container.dialogPresentation.show(content: .joinDialog(isPresented: $dialogPresentation.isPresented, isSucceed: $dialogPresentation.isSucceed))
         }, label: {
             VStack {
                 Text("방에 참여하기")
@@ -31,7 +35,7 @@ struct NoEnterView: View {
         })
         .padding(.bottom,48)
         Button(action: {
-            dialogPresentation.show(content: .makeRoomDialog(isPresented: $dialogPresentation.isPresented))
+            container.dialogPresentation.show(content: .makeRoomDialog(isPresented: $dialogPresentation.isPresented, isSucceed: $dialogPresentation.isSucceed))
         }, label: {
             VStack {
                 Text("방에 만들기")
@@ -42,7 +46,7 @@ struct NoEnterView: View {
             }.frame(width: 273, height: 81).background(Color.gray)
                 .clipShape(RoundedRectangle(cornerRadius: 15))
         })}
-        .customDialog(presentationManager: dialogPresentation)
+        .customDialog(presentationManager: container.dialogPresentation)
     }
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MakeRoomDialogView: View {
     @Binding var isPresented: Bool
+    @Binding var isSucceed: Bool
     @State var roomTitle: String = ""
     var roomCode: String = "123iofjewjfio"
     private let pasteboard = UIPasteboard.general
@@ -68,7 +69,7 @@ struct MakeRoomDialogView: View {
 }
 
 
-#Preview {
-    MakeRoomDialogView(isPresented: .constant(true))
+//#Preview {
 //    MakeRoomDialogView(isPresented: .constant(true))
-}
+////    MakeRoomDialogView(isPresented: .constant(true))
+//}

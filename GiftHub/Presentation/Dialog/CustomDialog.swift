@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomDialog: ViewModifier {
-    @ObservedObject var presentationManager: DialogPresentation
+    var presentationManager: DialogPresentation
     func body(content: Content) -> some View {
         ZStack {
             content

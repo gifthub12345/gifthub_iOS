@@ -9,16 +9,18 @@ import SwiftUI
 
 enum DialogContent: View {
 
-    case joinDialog(isPresented: Binding<Bool>)
-    case makeRoomDialog(isPresented: Binding<Bool>)
-
+    case joinDialog(isPresented: Binding<Bool>, isSucceed: Binding<Bool>)
+    case makeRoomDialog(isPresented: Binding<Bool>, isSucceed: Binding<Bool>)
+    case addGiftDialog(image: UIImage, expiratinDate: String,  isPresented: Binding<Bool>)
     @ViewBuilder
     var body: some View {
         switch self {
-        case .joinDialog(let isPresented):
-            JoinDialogView(isPresented: isPresented)
-        case .makeRoomDialog(let isPresented):
-            MakeRoomDialogView(isPresented: isPresented)
+        case .joinDialog(let isPresented, let isSucceed):
+            JoinDialogView(isPresented: isPresented, isSucceed: isSucceed)
+        case .makeRoomDialog(let isPresented, let isSucceed):
+            MakeRoomDialogView(isPresented: isPresented, isSucceed: isSucceed)
+        case .addGiftDialog(let image, let date, let isPresented):
+            AddGiftDialog(image: image, expirationDate: date, isOpen: isPresented)
 
         }
     }

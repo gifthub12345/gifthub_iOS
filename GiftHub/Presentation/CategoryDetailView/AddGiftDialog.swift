@@ -7,15 +7,11 @@
 
 import SwiftUI
 
-struct AddGiftModal: View {
+struct AddGiftDialog: View {
    let image: UIImage
-    @Binding var expirationDate: String
+   var expirationDate: String
     @Binding var isOpen: Bool
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(.gray.opacity(0.7))
-                .ignoresSafeArea()
             VStack {
                 ZStack(alignment: .top) {
                     Image(uiImage: image)
@@ -62,7 +58,7 @@ struct AddGiftModal: View {
 
 
         }
-    }
+
 
 }
 

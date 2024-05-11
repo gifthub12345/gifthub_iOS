@@ -9,14 +9,18 @@ import SwiftUI
 import PhotosUI
 struct CategoryDetailView: View {
     @StateObject private var viewModel = CategoryViewModel()
+    @Environment(DIContainer.self) var container
+//    @State private var dialogPresentation = DialogPresentation()
     var category: Category
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
        var body: some View {
+           @Bindable var dialogPresentation = container.dialogPresentation
            ScrollView {
                LazyVGrid(columns: columns){
 
                }}.navigationBarTitleDisplayMode(.large)
                .navigationTitle(category.rawValue)
+               .customDialog(presentationManager: container.dialogPresentation)
                .toolbar {
                    ToolbarItem(placement: .topBarTrailing) {
                        PhotosPicker(selection: $viewModel.imageSelection, matching: .images) {
@@ -36,14 +40,13 @@ struct CategoryDetailView: View {
                        .padding(.leading, 4 )
                    }.padding(.horizontal, 16 )
                }
-               .overlay {
-                   if viewModel.isSucceed {
+               .onChange(of: viewModel.isSucceed, { oldValue, newValue in
+                   if newValue == true{
                        if let selectedImage = viewModel.selectedImage {
-                           AddGiftModal(image: selectedImage, expirationDate: $viewModel.OCRString, isOpen: $viewModel.isSucceed)
+                           container.dialogPresentation.show(content: .addGiftDialog(image: selectedImage, expiratinDate: viewModel.OCRString, isPresented: $dialogPresentation.isPresented))
                        }
                    }
-
-               }
+               })
 //               .fullScreenCover(isPresented: $viewModel.isSucceed, content: {
 ////                   if let ocrString = viewModel.OCRString,
 //
@@ -51,9 +54,9 @@ struct CategoryDetailView: View {
 //               })
        }
 }
-
-#Preview {
-    NavigationStack {
-        CategoryDetailView(category: .cafeBakery)
-    }
-}
+//
+//#Preview {
+//    NavigationStack {
+//        CategoryDetailView(category: .cafeBakery)
+//    }
+//}

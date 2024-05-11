@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
-
-final class DialogPresentation: ObservableObject {
-    @Published var isPresented = false
-    @Published var dialogContent: DialogContent?
+@Observable
+final class DialogPresentation {
+     var isPresented = false
+     var dialogContent: DialogContent?
+     var isSucceed = false
     func show(content: DialogContent?) {
         if let presentDilaog = content {
             dialogContent = presentDilaog

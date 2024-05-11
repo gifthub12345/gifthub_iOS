@@ -9,6 +9,7 @@ import SwiftUI
 
 struct JoinDialogView: View {
     @Binding var isPresented: Bool
+    @Binding var isSucceed: Bool
     @State var joinCode: String = ""
     var body: some View {
         VStack(spacing: 0) {

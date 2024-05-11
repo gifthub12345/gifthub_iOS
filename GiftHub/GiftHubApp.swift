@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct GiftHubApp: App {
+    @State var container = DIContainer()
     var body: some Scene {
         WindowGroup {
-            CategoryView()
+            LoginView()
+                .environment(container)
         }
     }
 }
