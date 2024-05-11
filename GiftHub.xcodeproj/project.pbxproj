@@ -22,6 +22,8 @@
 		C7BD5B362BE78A5C0060CC38 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B352BE78A5C0060CC38 /* CategoryView.swift */; };
 		C7BD5B382BE7908C0060CC38 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B372BE7908C0060CC38 /* CategoryGridView.swift */; };
 		C7BD5B3B2BE7A0080060CC38 /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5B3A2BE7A0080060CC38 /* CategoryDetailView.swift */; };
+		C7C2944D2BEF21D1009FACD8 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C2944C2BEF21D1009FACD8 /* CategoryViewModel.swift */; };
+		C7C2944F2BEF25CF009FACD8 /* AddGiftModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C2944E2BEF25CF009FACD8 /* AddGiftModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		C7BD5B352BE78A5C0060CC38 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		C7BD5B372BE7908C0060CC38 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
 		C7BD5B3A2BE7A0080060CC38 /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
+		C7C2944C2BEF21D1009FACD8 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		C7C2944E2BEF25CF009FACD8 /* AddGiftModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGiftModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				C7BD5B3A2BE7A0080060CC38 /* CategoryDetailView.swift */,
+				C7C2944C2BEF21D1009FACD8 /* CategoryViewModel.swift */,
+				C7C2944E2BEF25CF009FACD8 /* AddGiftModal.swift */,
 			);
 			path = CategoryDetailView;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			files = (
 				C7BD5B382BE7908C0060CC38 /* CategoryGridView.swift in Sources */,
 				C7BD5B2D2BE77B000060CC38 /* DialogPresentation.swift in Sources */,
+				C7C2944D2BEF21D1009FACD8 /* CategoryViewModel.swift in Sources */,
 				C7BD5B202BE760330060CC38 /* LoginView.swift in Sources */,
 				C7BD5B122BE75D6B0060CC38 /* ContentView.swift in Sources */,
 				C7BD5B262BE7646B0060CC38 /* MakeRoomDialogView.swift in Sources */,
@@ -247,6 +254,7 @@
 				C7BD5B102BE75D6B0060CC38 /* GiftHubApp.swift in Sources */,
 				C7BD5B312BE77BB10060CC38 /* DialogContent.swift in Sources */,
 				C7BD5B3B2BE7A0080060CC38 /* CategoryDetailView.swift in Sources */,
+				C7C2944F2BEF25CF009FACD8 /* AddGiftModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
