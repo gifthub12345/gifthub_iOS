@@ -17,9 +17,11 @@ struct CustomDialog: ViewModifier {
                     .edgesIgnoringSafeArea(.all)
 
                 presentationManager.dialogContent
-                    .padding(24)
+                    .edgesIgnoringSafeArea(.all)
+                    .padding(.horizontal, 16)
+//                    .padding(24)
             }
-        }
+        }/*.ignoresSafeArea(.all)*/
     }
 }
 

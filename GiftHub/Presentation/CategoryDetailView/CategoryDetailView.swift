@@ -19,6 +19,7 @@ struct CategoryDetailView: View {
                LazyVGrid(columns: columns){
 
                }}.navigationBarTitleDisplayMode(.large)
+           
                .navigationTitle(category.rawValue)
                .customDialog(presentationManager: container.dialogPresentation)
                .toolbar {

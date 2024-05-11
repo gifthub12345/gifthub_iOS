@@ -54,7 +54,8 @@ struct AddGiftDialog: View {
             .padding(.vertical, 16)
             .background(.white)
             .clipShape(.rect(cornerRadius: 20))
-            .padding(.horizontal, 48)
+            .padding(.horizontal, 32)
+            .offset(x: 0, y: -40)
 
 
         }
