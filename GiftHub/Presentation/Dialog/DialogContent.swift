@@ -16,9 +16,9 @@ enum DialogContent: View {
     var body: some View {
         switch self {
         case .joinDialog(let isPresented, let isSucceed):
-            JoinDialogView(isPresented: isPresented, isSucceed: isSucceed)
+            JoinDialogView(isPresented: isPresented, isSucceed: isSucceed, viewmodel: JoinDialogViewModel())
         case .makeRoomDialog(let isPresented, let isSucceed):
-            MakeRoomDialogView(isPresented: isPresented, isSucceed: isSucceed)
+            MakeRoomDialogView(isPresented: isPresented, isSucceed: isSucceed, viewModel: MakeRoomDialogViewModel())
         case .addGiftDialog(let image, let date, let isPresented):
             AddGiftDialog(image: image, expirationDate: date, isOpen: isPresented)
 

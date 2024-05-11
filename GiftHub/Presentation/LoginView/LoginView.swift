@@ -38,13 +38,13 @@ struct LoginView: View {
             .navigationDestination(for: NavigationRoutes.self) { routes in
                 switch routes {
                 case .noRoomYet:
-                    NoEnterView()
+                    NoEnterView(path: $navigationPath)
                 case .mainView:
-                    CategoryView()
+                    CategoryView(path: $navigationPath)
                 case .detailView(let detail):
                     CategoryDetailView(category: detail)
-                default:
-                    NoEnterView()
+                case .setting:
+                    SettingView()
                 }
             }
         }

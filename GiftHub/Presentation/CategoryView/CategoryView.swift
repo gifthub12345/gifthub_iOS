@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CategoryView: View {
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+    @Binding var path: NavigationPath
     var body: some View {
-        NavigationStack {
+
             ScrollView {
                 LazyVGrid(columns: columns){
                     ForEach(Category.allCases, id: \.self) { category in
@@ -21,10 +22,11 @@ struct CategoryView: View {
                     }
                 }
 
-            }.navigationBarTitleDisplayMode(.inline)
+            }.navigationBarBackButtonHidden()
+            .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: {}, label: {
+                        Button(action: {path.append(NavigationRoutes.setting)}, label: {
                             Image(systemName: "gear")
                                 .foregroundStyle(Color.black)
                         })
@@ -33,9 +35,9 @@ struct CategoryView: View {
                         Text("방제목(구성수)")
                     }
                 }
-        }
+
     }
 }
-#Preview {
-    CategoryView()
-}
+//#Preview {
+//    CategoryView()
+//}

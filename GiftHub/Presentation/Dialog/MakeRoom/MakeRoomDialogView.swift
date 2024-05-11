@@ -12,7 +12,7 @@ struct MakeRoomDialogView: View {
     @Binding var isPresented: Bool
     @Binding var isSucceed: Bool
     @State var roomTitle: String = ""
-    var roomCode: String = "123iofjewjfio"
+    @ObservedObject var viewModel: MakeRoomDialogViewModel
     private let pasteboard = UIPasteboard.general
     var body: some View {
         VStack(spacing: 0) {
@@ -37,9 +37,9 @@ struct MakeRoomDialogView: View {
                 .padding(.vertical, 8)
             HStack {
                 Spacer()
-                Text(roomCode)
+                Text(viewModel.joinCodeString)
                 Button(action: {
-                    pasteboard.string = roomCode
+                    pasteboard.string = viewModel.joinCodeString
                 }, label: {
                     Image(systemName: "doc.on.clipboard")
                         .resizable()
@@ -54,7 +54,7 @@ struct MakeRoomDialogView: View {
                 .padding()
                 .textFieldStyle(.roundedBorder)
                 .padding(.bottom,16)
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {viewModel.makeRoom()}, label: {
                 Text("제작")
                     .foregroundStyle(Color.black)
                     .frame(width: 100, height:  38)
@@ -62,6 +62,10 @@ struct MakeRoomDialogView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }).padding(.bottom, 16)
         }
+        .onChange(of: viewModel.isSucceed, { oldValue, newValue in
+            isSucceed = newValue
+            isPresented = false
+        })
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
 

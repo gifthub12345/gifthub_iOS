@@ -27,6 +27,8 @@
 		C7C294552BEF7700009FACD8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C294542BEF7700009FACD8 /* Category.swift */; };
 		C7C294582BEF790C009FACD8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C294572BEF790C009FACD8 /* SettingView.swift */; };
 		C7C2945C2BEFBFD8009FACD8 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C2945B2BEFBFD8009FACD8 /* DIContainer.swift */; };
+		C7C2945E2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C2945D2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift */; };
+		C7C294622BEFD3A2009FACD8 /* JoinDialogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C294612BEFD3A2009FACD8 /* JoinDialogViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		C7C294542BEF7700009FACD8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C7C294572BEF790C009FACD8 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C7C2945B2BEFBFD8009FACD8 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		C7C2945D2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomDialogViewModel.swift; sourceTree = "<group>"; };
+		C7C294612BEFD3A2009FACD8 /* JoinDialogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDialogViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +142,8 @@
 				C7BD5B2A2BE77AA50060CC38 /* CustomDialog.swift */,
 				C7BD5B2C2BE77B000060CC38 /* DialogPresentation.swift */,
 				C7BD5B302BE77BB10060CC38 /* DialogContent.swift */,
-				C7BD5B252BE7646B0060CC38 /* MakeRoomDialogView.swift */,
-				C7BD5B322BE786A00060CC38 /* JoinDialogView.swift */,
+				C7C294602BEFD397009FACD8 /* JoinDialog */,
+				C7C2945F2BEFD38F009FACD8 /* MakeRoom */,
 			);
 			path = Dialog;
 			sourceTree = "<group>";
@@ -213,6 +217,24 @@
 			path = Container;
 			sourceTree = "<group>";
 		};
+		C7C2945F2BEFD38F009FACD8 /* MakeRoom */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B252BE7646B0060CC38 /* MakeRoomDialogView.swift */,
+				C7C2945D2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift */,
+			);
+			path = MakeRoom;
+			sourceTree = "<group>";
+		};
+		C7C294602BEFD397009FACD8 /* JoinDialog */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5B322BE786A00060CC38 /* JoinDialogView.swift */,
+				C7C294612BEFD3A2009FACD8 /* JoinDialogViewModel.swift */,
+			);
+			path = JoinDialog;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,8 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7BD5B382BE7908C0060CC38 /* CategoryGridView.swift in Sources */,
+				C7C2945E2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift in Sources */,
 				C7BD5B2D2BE77B000060CC38 /* DialogPresentation.swift in Sources */,
 				C7C2944D2BEF21D1009FACD8 /* CategoryViewModel.swift in Sources */,
+				C7C294622BEFD3A2009FACD8 /* JoinDialogViewModel.swift in Sources */,
 				C7BD5B202BE760330060CC38 /* LoginView.swift in Sources */,
 				C7BD5B262BE7646B0060CC38 /* MakeRoomDialogView.swift in Sources */,
 				C7BD5B2F2BE77B610060CC38 /* View+.swift in Sources */,

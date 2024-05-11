@@ -11,6 +11,7 @@ struct JoinDialogView: View {
     @Binding var isPresented: Bool
     @Binding var isSucceed: Bool
     @State var joinCode: String = ""
+    @ObservedObject var viewmodel: JoinDialogViewModel
     var body: some View {
         VStack(spacing: 0) {
 
@@ -34,14 +35,17 @@ struct JoinDialogView: View {
                 .padding()
                 .textFieldStyle(.roundedBorder)
                 .padding(.bottom,16)
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {viewmodel.joinRoom()}, label: {
                 Text("참여")
                     .foregroundStyle(Color.black)
                     .frame(width: 100, height:  38)
                     .background(Color.purple)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }).padding(.bottom, 16)
-        }
+        }.onChange(of: viewmodel.isSucceed, { oldValue, newValue in
+            isSucceed = newValue
+            isPresented = false
+        })
         .background(.white).clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
