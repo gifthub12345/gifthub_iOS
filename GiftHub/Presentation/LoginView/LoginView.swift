@@ -1,16 +1,10 @@
-//
-//  LoginView.swift
-//  GiftHub
-//
-//  Created by 235 on 5/5/24.
-//
-
 import SwiftUI
-import AuthenticationServices
-
+import Alamofire
 
 struct LoginView: View {
     @State private var navigationPath = NavigationPath()
+    @State private var showWebView = false
+
     var body: some View {
         NavigationStack(path: $navigationPath) {
             VStack {
@@ -21,19 +15,14 @@ struct LoginView: View {
                     .frame(width: 260,height: 260)
                     .padding(.horizontal, 64)
                     .padding(.vertical,40)
-                SignInWithAppleButton { request in
-                    request.requestedScopes = [.email, .fullName]
-                } onCompletion: { result in
-                    switch result {
-                    case .success(let authresult ):
-                        print(authresult.credential)
-                        navigationPath.append(NavigationRoutes.noRoomYet)
-                    case .failure(let fail):
-                        print(fail)
-                    }
-                }.frame(width: 344, height: 61)
-                //                .clipShape(.rect(cornerRadius: <#T##CGFloat#>))
 
+                Button(action: {
+                    showWebView = true
+                }) {
+                    Image("signApple")
+                        .resizable()
+                        .frame(width: 350, height: 62)
+                }
             }
             .navigationDestination(for: NavigationRoutes.self) { routes in
                 switch routes {
@@ -48,8 +37,23 @@ struct LoginView: View {
                 }
             }
         }
+
+                .sheet(isPresented: $showWebView) {
+                    WebView(url: URL(string: "https://api.gifthub.site/login/apple")!) { code in
+
+                            KeychainManager.shared.saveToken(key: "Authorization", token: code.authorization)
+                        print(code.authorization)
+                        showWebView = false
+                        navigationPath.append(NavigationRoutes.noRoomYet)
+                    }
+                    .presentationDetents([
+                        .fraction(0.5)])
+
+                
+            }
+        }
     }
-}
+
 
 #Preview {
     LoginView()
