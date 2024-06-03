@@ -58,6 +58,7 @@ class CategoryViewModel: ObservableObject {
             }
         }
     }
+    
     private func setImage(from selection: PhotosPickerItem?) {
         guard let selection else {return}
         Task {

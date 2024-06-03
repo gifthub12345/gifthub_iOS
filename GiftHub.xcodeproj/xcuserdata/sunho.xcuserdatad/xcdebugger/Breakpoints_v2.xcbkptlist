@@ -530,36 +530,6 @@
             endingLineNumber = "23"
             landmarkName = "makeRoom()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6B8F9B77-7371-406A-B114-BA786BC2F3FC - 8e84830c9b7a3bb8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GiftHub.MakeRoomDialogViewModel.makeRoom() -&gt; ()"
-                  moduleName = "GiftHub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/GiftHub/GiftHub/Presentation/Dialog/MakeRoom/MakeRoomDialogViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23">
-               </Location>
-               <Location
-                  uuid = "6B8F9B77-7371-406A-B114-BA786BC2F3FC - 5418cbedf718f99f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Alamofire.DataResponse&lt;GiftHub.MakeRoomResponse, Alamofire.AFError&gt;) -&gt; () in GiftHub.MakeRoomDialogViewModel.makeRoom() -&gt; ()"
-                  moduleName = "GiftHub"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sunho/Desktop/%F0%9F%8D%8EProject/GiftHub/GiftHub/Presentation/Dialog/MakeRoom/MakeRoomDialogViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -620,8 +590,8 @@
             filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "recongziedText(image:)"
             landmarkType = "7">
          </BreakpointContent>
