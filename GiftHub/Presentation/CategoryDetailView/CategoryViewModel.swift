@@ -20,7 +20,7 @@ class CategoryViewModel: ObservableObject {
             setImage(from: imageSelection)
         }
     }
-    @Published var images: [ImageUrl] = []
+    @Published var images: [String] = []
     private var barcodeOCRString: String = ""
     var roomid: Int
 //    var categoryId: Int
@@ -32,8 +32,10 @@ class CategoryViewModel: ObservableObject {
         AF.request(APICase.requestCategoryList(roomid: roomid, categoryId:category.id))
             .response {res in
                 debugPrint(res)
+                guard let value = res.value else { return}
+                print(value)
             }
-            .responseDecodable(of: GetImageResponse.self) { res in
+            .responseDecodable(of: [GetImageResponse].self) { res in
                 print(res)
 //                self.images = res.value!.url
             }

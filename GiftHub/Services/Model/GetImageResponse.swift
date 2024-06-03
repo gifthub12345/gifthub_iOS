@@ -7,9 +7,9 @@
 
 import Foundation
 struct GetImageResponse: Decodable {
-    var url: [ImageUrl]
-}
-struct ImageUrl: Decodable {
     var url: String
-
 }
+
+//struct ImageUrl: Decodable {
+//    var url: String
+//}
