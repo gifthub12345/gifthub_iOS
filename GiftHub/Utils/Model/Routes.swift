@@ -8,8 +8,8 @@
 import Foundation
 enum NavigationRoutes: Hashable {
     case noRoomYet
-    case mainView
-    case detailView(detail: Category)
+    case mainView(roomId: Int)
+    case detailView(detail: Category, roomId: Int)
     case setting
     
 }

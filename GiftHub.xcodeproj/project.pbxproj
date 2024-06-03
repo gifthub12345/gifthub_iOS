@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C73730402BFDB41100187EEF /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737303F2BFDB41100187EEF /* AuthResponse.swift */; };
 		C73730432BFDB46E00187EEF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73730422BFDB46E00187EEF /* KeychainManager.swift */; };
+		C74E60DC2C0C9E7E002C7DEB /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E60DB2C0C9E7E002C7DEB /* LoginResponse.swift */; };
 		C7816B712BFDA0F100F6659F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7816B702BFDA0F100F6659F /* ContentView.swift */; };
 		C7816B7D2BFDA2CD00F6659F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7816B7C2BFDA2CD00F6659F /* Alamofire */; };
 		C7816B7F2BFDA7B000F6659F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7816B7E2BFDA7B000F6659F /* NetworkManager.swift */; };
@@ -39,6 +40,8 @@
 		C7C2945C2BEFBFD8009FACD8 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C2945B2BEFBFD8009FACD8 /* DIContainer.swift */; };
 		C7C2945E2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C2945D2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift */; };
 		C7C294622BEFD3A2009FACD8 /* JoinDialogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C294612BEFD3A2009FACD8 /* JoinDialogViewModel.swift */; };
+		C7FC37212C0CD68A00C2BB30 /* MakeRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FC37202C0CD68A00C2BB30 /* MakeRoomResponse.swift */; };
+		C7FC37232C0D7A6F00C2BB30 /* GetImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FC37222C0D7A6F00C2BB30 /* GetImageResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +60,7 @@
 /* Begin PBXFileReference section */
 		C737303F2BFDB41100187EEF /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		C73730422BFDB46E00187EEF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		C74E60DB2C0C9E7E002C7DEB /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		C7816B702BFDA0F100F6659F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7816B7E2BFDA7B000F6659F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C7816B802BFDAEA400F6659F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		C7C2945B2BEFBFD8009FACD8 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		C7C2945D2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomDialogViewModel.swift; sourceTree = "<group>"; };
 		C7C294612BEFD3A2009FACD8 /* JoinDialogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDialogViewModel.swift; sourceTree = "<group>"; };
+		C7FC37202C0CD68A00C2BB30 /* MakeRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomResponse.swift; sourceTree = "<group>"; };
+		C7FC37222C0D7A6F00C2BB30 /* GetImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				C737303F2BFDB41100187EEF /* AuthResponse.swift */,
+				C7FC37202C0CD68A00C2BB30 /* MakeRoomResponse.swift */,
+				C74E60DB2C0C9E7E002C7DEB /* LoginResponse.swift */,
+				C7FC37222C0D7A6F00C2BB30 /* GetImageResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +398,7 @@
 				C7816B7F2BFDA7B000F6659F /* NetworkManager.swift in Sources */,
 				C7BE5C092BFC6667007B1D3D /* API.swift in Sources */,
 				C7816B712BFDA0F100F6659F /* ContentView.swift in Sources */,
+				C7FC37232C0D7A6F00C2BB30 /* GetImageResponse.swift in Sources */,
 				C7BD5B382BE7908C0060CC38 /* CategoryGridView.swift in Sources */,
 				C7C2945E2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift in Sources */,
 				C7BD5B2D2BE77B000060CC38 /* DialogPresentation.swift in Sources */,
@@ -400,7 +410,9 @@
 				C7BD5B362BE78A5C0060CC38 /* CategoryView.swift in Sources */,
 				C7C294552BEF7700009FACD8 /* Category.swift in Sources */,
 				C73730432BFDB46E00187EEF /* KeychainManager.swift in Sources */,
+				C74E60DC2C0C9E7E002C7DEB /* LoginResponse.swift in Sources */,
 				C7BE5C102BFC6709007B1D3D /* APICase.swift in Sources */,
+				C7FC37212C0CD68A00C2BB30 /* MakeRoomResponse.swift in Sources */,
 				C7BE5C062BFC6626007B1D3D /* LoginViewModel.swift in Sources */,
 				C7C294532BEF7673009FACD8 /* Routes.swift in Sources */,
 				C7C294582BEF790C009FACD8 /* SettingView.swift in Sources */,
@@ -562,7 +574,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sunho.GiftHub;
+				PRODUCT_BUNDLE_IDENTIFIER = GiftHub.main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -592,7 +604,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Sunho.GiftHub;
+				PRODUCT_BUNDLE_IDENTIFIER = GiftHub.main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

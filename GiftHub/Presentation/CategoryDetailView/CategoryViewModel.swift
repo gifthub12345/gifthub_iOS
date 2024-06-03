@@ -9,6 +9,7 @@ import Vision
 import VisionKit
 import SwiftUI
 import PhotosUI
+import Alamofire
 
 class CategoryViewModel: ObservableObject {
     @Published var OCRString: String = ""
@@ -19,11 +20,27 @@ class CategoryViewModel: ObservableObject {
             setImage(from: imageSelection)
         }
     }
+    @Published var images: [ImageUrl] = []
+    var roomid: Int
+//    var categoryId: Int
+    init( roomid: Int) {
+//        self.categoryId = categoryId
+        self.roomid = roomid
+    }
+    func getDetailImages(category: Category) {
+        AF.request(APICase.requestCategoryList(roomid: roomid, categoryId:category.id))
+            .response {res in
+                debugPrint(res)
+            }
+            .responseDecodable(of: GetImageResponse.self) { res in
+                print(res)
+//                self.images = res.value!.url
+            }
+    }
     private func setImage(from selection: PhotosPickerItem?) {
         guard let selection else {return}
         Task {
             if let data = try? await selection.loadTransferable(type: Data.self), let image = UIImage(data: data){
-
                 selectedImage = image
                 recongziedText(image: image)
             }

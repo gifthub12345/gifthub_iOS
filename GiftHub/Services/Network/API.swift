@@ -21,6 +21,6 @@ struct API {
       }
     static var headerwithAuthorization: HTTPHeaders =  [
         NetworkHeaderKey.contentType.rawValue: API.applicationJSON,
-//        NetworkHeaderKey.authorization.rawValue: "Bearer \(KeychainManager.shared.readToken(key: "accessToken") ?? "")"
+        NetworkHeaderKey.authorization.rawValue: "\(KeychainManager.shared.readToken(key: "accessToken") ?? "")"
     ]
 }

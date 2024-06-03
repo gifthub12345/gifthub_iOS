@@ -9,33 +9,20 @@ import Alamofire
 import SwiftUI
 @Observable
 final class NetworkManager {
-    private let session  = Session(redirectHandler: Redirector(behavior: .follow))
-    func performloginRedirect() {
-        let url = "https://api.gifthub.site/login/apple"
-
-                // Configure the session to handle redirects
-//                let session = Session(configuration: .default, redirectHandler: RedirectHandler())
-//        let session = Session(redirectHandler: Redirector(behavior: .follow))
-                session.request(url, method: .get)
-            .response {res in
-                debugPrint(res)
-            }
-                    .validate()
-                    .response { response in
-                        switch response.result {
-                        case .success(let data):
-                            if let url = URL(string: url) {
-                                                   UIApplication.shared.open(url)
-                                               }
-                        case .failure(let error):
-                            print("Request error: \(error.localizedDescription)")
-                        }
+    func performLoginRequest(identity: String) async throws -> LoginResponse {
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(APICase.requestLogin(authCode: identity))
+                .response { res in
+                    debugPrint(res)
+                }
+                .responseDecodable(of: LoginResponse.self) { res in
+                    switch res.result {
+                    case .success(let response):
+                        continuation.resume(returning: response)
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
                     }
+                }
+        }
     }
 }
-//class RedirectHandler: RedirectHandler {
-//    func task(_ task: URLSessionTask, willBeRedirectedTo request: URLRequest, for response: HTTPURLResponse, completion: @escaping (URLRequest?) -> Void) {
-//        print("Redirecting to: \(request.url?.absoluteString ?? "Unknown URL")")
-//        completion(request) // Allow the redirection
-//    }
-//}

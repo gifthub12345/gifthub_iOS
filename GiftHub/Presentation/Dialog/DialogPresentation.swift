@@ -11,6 +11,7 @@ final class DialogPresentation {
      var isPresented = false
      var dialogContent: DialogContent?
      var isSucceed = false
+    var roomCode: Int?
     func show(content: DialogContent?) {
         if let presentDilaog = content {
             dialogContent = presentDilaog

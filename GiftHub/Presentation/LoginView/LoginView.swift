@@ -46,8 +46,8 @@ struct LoginView: View {
                     NoEnterView(path: $navigationPath)
                 case .mainView(let roomId):
                     CategoryView(path: $navigationPath, roomId: roomId)
-                case .detailView(let detail):
-                    CategoryDetailView(category: detail)
+                case .detailView(let detail, let roomId):
+                    CategoryDetailView(viewModel: CategoryViewModel(roomid: roomId), category: detail)
                 case .setting:
                     SettingView()
                 }

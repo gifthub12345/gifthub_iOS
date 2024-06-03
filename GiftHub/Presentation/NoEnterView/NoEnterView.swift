@@ -11,7 +11,7 @@ struct NoEnterView: View {
     @Environment(DIContainer.self) var container
     @Binding var path: NavigationPath
     //    @State private var dialogPresentation = DialogPresentation()
-
+    @State private var roomID:Int = 0
     var body: some View {
         @Bindable var dialogPresentation = container.dialogPresentation
         VStack {
@@ -22,8 +22,8 @@ struct NoEnterView: View {
             Image("noRoom")
                 .padding(.bottom, 48)
             Button(action: {
-                container.dialogPresentation.show(content: .joinDialog(isPresented: $dialogPresentation.isPresented, isSucceed: $dialogPresentation.isSucceed))
-                container.dialogPresentation.show(content: .joinDialog(isPresented: $dialogPresentation.isPresented, isSucceed: $dialogPresentation.isSucceed))
+                container.dialogPresentation.show(content: .joinDialog(isPresented: $dialogPresentation.isPresented, isSucceed: $dialogPresentation.isSucceed, roomId: $roomID))
+
             }, label: {
                 VStack {
                     Text("방에 참여하기")
@@ -36,7 +36,7 @@ struct NoEnterView: View {
             })
             .padding(.bottom,48)
             Button(action: {
-                container.dialogPresentation.show(content: .makeRoomDialog(isPresented: $dialogPresentation.isPresented, isSucceed: $dialogPresentation.isSucceed))
+                container.dialogPresentation.show(content: .makeRoomDialog(isPresented: $dialogPresentation.isPresented, isSucceed: $dialogPresentation.isSucceed, roomId: $roomID))
             }, label: {
                 VStack {
                     Text("방에 만들기")
@@ -51,7 +51,8 @@ struct NoEnterView: View {
         .customDialog(presentationManager: container.dialogPresentation)
         .onChange(of: dialogPresentation.isSucceed) { oldValue, newValue in
             if newValue == true {
-                path.append(NavigationRoutes.mainView)
+//                path.append(NavigationRoutes.mainView)
+                path.append(NavigationRoutes.mainView(roomId: roomID))
             }
         }
     }

@@ -27,4 +27,25 @@ enum Category: String, CaseIterable {
         case .etc: return "giftHubLogo"
         }
     }
+    var id: Int {
+        switch self {
+        case .pizzaChickenBurger:
+            return 1
+        case .cafeBakery:
+            return 2
+
+        case .iceCreamShavedIce:
+            return 3
+        case .movieTheaterThemePark:
+            return 4
+        case .chineseJapanese:
+            return 5
+        case .porkFeetBossamMeat:
+            return 6
+        case .money:
+            return 7
+        case .etc:
+            return 8
+        }
+    }
 }

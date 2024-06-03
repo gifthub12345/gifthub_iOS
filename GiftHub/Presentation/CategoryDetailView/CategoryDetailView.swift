@@ -8,8 +8,9 @@
 import SwiftUI
 import PhotosUI
 struct CategoryDetailView: View {
-    @StateObject private var viewModel = CategoryViewModel()
+    @ObservedObject var viewModel: CategoryViewModel
     @Environment(DIContainer.self) var container
+//    var roomid: Int
 //    @State private var dialogPresentation = DialogPresentation()
     var category: Category
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
@@ -53,7 +54,11 @@ struct CategoryDetailView: View {
 //
 //
 //               })
+               .onAppear {
+                   viewModel.getDetailImages(category: category)
+               }
        }
+
 }
 //
 //#Preview {

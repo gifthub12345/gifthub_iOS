@@ -12,7 +12,7 @@ struct GiftHubApp: App {
     @State var container = DIContainer()
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            LoginView(viewmodel: LoginViewModel(diContainer: container))
                 .environment(container)
         }
     }

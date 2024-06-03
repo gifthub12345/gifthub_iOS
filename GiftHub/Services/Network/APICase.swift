@@ -8,8 +8,8 @@
 import Foundation
 import Alamofire
 enum APICase {
-//    case requestLogin
-    case requestCreateRoom
+    case requestLogin(authCode: String)
+    case requestCreateRoom(roomTitle: String)
     case requestEnterRoom(roomCode: String)
     case requestExitRoom(roomid: Int)
     case requestMainRoom(roomid: Int)
@@ -27,8 +27,8 @@ extension APICase: Router, URLRequestConvertible {
     }
     var path: String {
         switch self {
-//        case .requestLogin:
-//            "/login/apple"
+        case .requestLogin:
+            "/login/apple"
         case .requestCreateRoom:
             "/room/create"
         case .requestEnterRoom:
@@ -54,8 +54,8 @@ extension APICase: Router, URLRequestConvertible {
     
     var method: Alamofire.HTTPMethod {
         switch self {
-//        case .requestLogin:
-//                .get
+        case .requestLogin:
+                .post
         case .requestCreateRoom:
                 .post
         case .requestEnterRoom:
@@ -81,8 +81,8 @@ extension APICase: Router, URLRequestConvertible {
     
     var headers: Alamofire.HTTPHeaders {
         switch self {
-//        case .requestLogin:
-//            return API.headerWithoutToken
+        case .requestLogin:
+            return API.headerWithoutToken
         default:
             return API.headerwithAuthorization
         }
@@ -90,9 +90,15 @@ extension APICase: Router, URLRequestConvertible {
     
     var parameters: Encodable? {
         switch self {
+        case .requestLogin(let authCode):
+            [
+                "authCode" : authCode
+            ]
+        case .requestCreateRoom(let roomTitle):
+            [
+                "title" : roomTitle
+            ]
 
-        case .requestCreateRoom:
-            nil
         case .requestEnterRoom(let roomCode):
             [
                 "code" : roomCode
@@ -107,7 +113,7 @@ extension APICase: Router, URLRequestConvertible {
             nil
         case .requestSaveImage:
             nil
-        case .requestCategoryList(let roomid, let categoryId):
+        case .requestCategoryList:
             nil
         case .requestRemoveImage(let roomid, let categoryId, let giftconId):
             nil
