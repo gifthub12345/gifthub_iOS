@@ -31,7 +31,7 @@ struct NoEnterView: View {
                         .padding(.bottom, 8)
                     Text("이미 누군가가 방을 만들었다면 참여해요")
                         .font(.system(size: 14))
-                }.frame(width: 273, height: 81).background(Color.gray)
+                }.frame(width: 273, height: 81).background(Color.customBlue)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
             })
             .padding(.bottom,48)
@@ -44,7 +44,7 @@ struct NoEnterView: View {
                         .padding(.bottom, 8)
                     Text("내가 제 일먼저 방을 만들어 보아요")
                         .font(.system(size: 14))
-                }.frame(width: 273, height: 81).background(Color.gray)
+                }.frame(width: 273, height: 81).background(Color.customPurple)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
             })}
         .navigationBarBackButtonHidden()

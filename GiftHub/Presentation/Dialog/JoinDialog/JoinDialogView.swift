@@ -10,7 +10,6 @@ import SwiftUI
 struct JoinDialogView: View {
     @Binding var isPresented: Bool
     @Binding var isSucceed: Bool
-    @State var joinCode: String = ""
     @ObservedObject var viewmodel: JoinDialogViewModel
     var body: some View {
         VStack(spacing: 0) {
@@ -31,7 +30,7 @@ struct JoinDialogView: View {
                     }
                 }.padding(.trailing, 28)
             }.padding(.vertical, 24)
-            TextField("참여하려는 방의 코드를 입력해주세요" , text: $joinCode)
+            TextField("참여하려는 방의 코드를 입력해주세요" , text: $viewmodel.joinCodeString)
                 .padding()
                 .textFieldStyle(.roundedBorder)
                 .padding(.bottom,16)
@@ -39,7 +38,7 @@ struct JoinDialogView: View {
                 Text("참여")
                     .foregroundStyle(Color.black)
                     .frame(width: 100, height:  38)
-                    .background(Color.purple)
+                    .background(Color.customPurple)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }).padding(.bottom, 16)
         }.onChange(of: viewmodel.isSucceed, { oldValue, newValue in
