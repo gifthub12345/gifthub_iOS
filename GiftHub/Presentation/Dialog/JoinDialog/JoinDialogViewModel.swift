@@ -10,13 +10,13 @@ import Alamofire
 class JoinDialogViewModel: ObservableObject {
     @Published var isSucceed: Bool = false
     @Published var joinCodeString: String = ""
-    @Published var roomId: Int = 0
+
     func joinRoom() {
         AF.request(APICase.requestEnterRoom(roomCode: joinCodeString))
             .responseDecodable(of: Int.self){ res in
                 switch res.result {
                 case .success(let roomId):
-                    self.roomId = roomId
+                    KeychainManager.shared.saveToken(key: "roomId", token: String(roomId))
                     self.isSucceed = true
                 case .failure(let err):
                     print(err)

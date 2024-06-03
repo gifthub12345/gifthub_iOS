@@ -10,7 +10,8 @@ import SwiftUI
 struct CategoryView: View {
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     @Binding var path: NavigationPath
-    var roomId: Int
+    @State var roomId: Int
+
     var body: some View {
 
         ScrollView {
@@ -37,8 +38,14 @@ struct CategoryView: View {
                     Text("방제목(구성수)")
                 }
             }
-
+            .onAppear {
+                if let keychainId = KeychainManager.shared.readToken(key: "roomId") {
+                    self.roomId = Int(keychainId) ?? 0
+                }
+               
+            }
     }
+
 }
 //#Preview {
 //    CategoryView()
