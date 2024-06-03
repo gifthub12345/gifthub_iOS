@@ -42,6 +42,7 @@
 		C7C294622BEFD3A2009FACD8 /* JoinDialogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C294612BEFD3A2009FACD8 /* JoinDialogViewModel.swift */; };
 		C7FC37212C0CD68A00C2BB30 /* MakeRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FC37202C0CD68A00C2BB30 /* MakeRoomResponse.swift */; };
 		C7FC37232C0D7A6F00C2BB30 /* GetImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FC37222C0D7A6F00C2BB30 /* GetImageResponse.swift */; };
+		C7FC37252C0DAF2E00C2BB30 /* GiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FC37242C0DAF2E00C2BB30 /* GiftRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +95,7 @@
 		C7C294612BEFD3A2009FACD8 /* JoinDialogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinDialogViewModel.swift; sourceTree = "<group>"; };
 		C7FC37202C0CD68A00C2BB30 /* MakeRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomResponse.swift; sourceTree = "<group>"; };
 		C7FC37222C0D7A6F00C2BB30 /* GetImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageResponse.swift; sourceTree = "<group>"; };
+		C7FC37242C0DAF2E00C2BB30 /* GiftRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				C7FC37202C0CD68A00C2BB30 /* MakeRoomResponse.swift */,
 				C74E60DB2C0C9E7E002C7DEB /* LoginResponse.swift */,
 				C7FC37222C0D7A6F00C2BB30 /* GetImageResponse.swift */,
+				C7FC37242C0DAF2E00C2BB30 /* GiftRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 			files = (
 				C7816B7F2BFDA7B000F6659F /* NetworkManager.swift in Sources */,
 				C7BE5C092BFC6667007B1D3D /* API.swift in Sources */,
+				C7FC37252C0DAF2E00C2BB30 /* GiftRequest.swift in Sources */,
 				C7816B712BFDA0F100F6659F /* ContentView.swift in Sources */,
 				C7FC37232C0D7A6F00C2BB30 /* GetImageResponse.swift in Sources */,
 				C7BD5B382BE7908C0060CC38 /* CategoryGridView.swift in Sources */,

@@ -11,6 +11,7 @@ struct AddGiftDialog: View {
    let image: UIImage
    var expirationDate: String
     @Binding var isOpen: Bool
+    var callback: () -> Void
     var body: some View {
             VStack {
                 ZStack(alignment: .top) {
@@ -41,7 +42,8 @@ struct AddGiftDialog: View {
                     .foregroundStyle(Color.gray)
                     .font(.system(size: 14, weight: .medium))
                     .padding(.bottom,24)
-                Button(action: {}, label: {
+                Button(action: {callback()
+                    isOpen.toggle()}, label: {
                     Text("네 등록할래요!")
                         .foregroundStyle(.black)
                         .frame(maxWidth: .infinity)

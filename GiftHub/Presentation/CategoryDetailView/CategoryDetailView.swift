@@ -45,15 +45,16 @@ struct CategoryDetailView: View {
                .onChange(of: viewModel.isSucceed, { oldValue, newValue in
                    if newValue == true{
                        if let selectedImage = viewModel.selectedImage {
-                           container.dialogPresentation.show(content: .addGiftDialog(image: selectedImage, expiratinDate: viewModel.OCRString, isPresented: $dialogPresentation.isPresented))
+                           container.dialogPresentation.show(content: .addGiftDialog(image: selectedImage, expirationDate: viewModel.expireOCRString, isPresented: $dialogPresentation.isPresented, viewModel: viewModel, category: category))
+                                           
                        }
                    }
                })
-//               .fullScreenCover(isPresented: $viewModel.isSucceed, content: {
-////                   if let ocrString = viewModel.OCRString,
-//
-//
-//               })
+               .onChange(of: dialogPresentation.isPresented) { oldValue, newValue in
+                      if !newValue {
+                          viewModel.isSucceed = false
+                      }
+                  } 
                .onAppear {
                    viewModel.getDetailImages(category: category)
                }

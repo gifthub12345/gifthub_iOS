@@ -19,6 +19,10 @@ struct API {
             NetworkHeaderKey.contentType.rawValue : applicationJSON
           ]
       }
+    static var headerWithmultiPart: HTTPHeaders = [
+        NetworkHeaderKey.contentType.rawValue: "multipart/form-data",
+        NetworkHeaderKey.authorization.rawValue: "\(KeychainManager.shared.readToken(key: "accessToken") ?? "")"
+    ]
     static var headerwithAuthorization: HTTPHeaders =  [
         NetworkHeaderKey.contentType.rawValue: API.applicationJSON,
         NetworkHeaderKey.authorization.rawValue: "\(KeychainManager.shared.readToken(key: "accessToken") ?? "")"
