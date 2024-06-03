@@ -1,10 +1,10 @@
 import SwiftUI
 import Alamofire
-
+import AuthenticationServices
 struct LoginView: View {
     @State private var navigationPath = NavigationPath()
     @State private var showWebView = false
-
+    var viewmodel: LoginViewModel
     var body: some View {
         NavigationStack(path: $navigationPath) {
             VStack {
@@ -15,46 +15,51 @@ struct LoginView: View {
                     .frame(width: 260,height: 260)
                     .padding(.horizontal, 64)
                     .padding(.vertical,40)
-
-                Button(action: {
-                    showWebView = true
-                }) {
-                    Image("signApple")
-                        .resizable()
-                        .frame(width: 350, height: 62)
-                }
+                SignInWithAppleButton { request in
+                    request.requestedScopes = [.email]
+                } onCompletion: { result in
+                    switch result {
+                    case .success(let authresults):
+                        switch authresults.credential {
+                        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                            
+                            let authorization = String(data: appleIDCredential.authorizationCode!, encoding:  .utf8)
+                            
+                            guard let authorizationCode = authorization else { return }
+                            Task {
+                                try await viewmodel.postLogin(authCode: authorizationCode)
+                            }
+                            
+                            //                            viewModel.setAuthorizationCode(authorizationCode)
+                            //                            viewModel.postA/*uthorCode()*/
+                        default:
+                            break
+                        }
+                    case .failure(let err):
+                        print(err.localizedDescription)
+                    }
+                }.frame(width: 350, height: 64).clipShape(.rect(cornerRadius: 10))
             }
             .navigationDestination(for: NavigationRoutes.self) { routes in
                 switch routes {
                 case .noRoomYet:
                     NoEnterView(path: $navigationPath)
-                case .mainView:
-                    CategoryView(path: $navigationPath)
+                case .mainView(let roomId):
+                    CategoryView(path: $navigationPath, roomId: roomId)
                 case .detailView(let detail):
                     CategoryDetailView(category: detail)
                 case .setting:
                     SettingView()
                 }
             }
-        }
-
-                .sheet(isPresented: $showWebView) {
-                    WebView(url: URL(string: "https://api.gifthub.site/login/apple")!) { code in
-
-                            KeychainManager.shared.saveToken(key: "Authorization", token: code.authorization)
-                        print(code.authorization)
-                        showWebView = false
-                        navigationPath.append(NavigationRoutes.noRoomYet)
-                    }
-                    .presentationDetents([
-                        .fraction(0.5)])
-
-                
+        }     .onChange(of: viewmodel.navigationState) { newState in
+            if let newState = newState {
+                navigationPath.append(newState)
             }
         }
     }
-
-
-#Preview {
-    LoginView()
 }
+//
+//#Preview {
+//    LoginView()
+//}
