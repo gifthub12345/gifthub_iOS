@@ -20,7 +20,7 @@ class CategoryViewModel: ObservableObject {
             setImage(from: imageSelection)
         }
     }
-    @Published var images: [String] = []
+    @Published var imageUrls: [String] = []
     private var barcodeOCRString: String = ""
     var roomid: Int
 //    var categoryId: Int
@@ -30,13 +30,11 @@ class CategoryViewModel: ObservableObject {
     }
     func getDetailImages(category: Category) {
         AF.request(APICase.requestCategoryList(roomid: roomid, categoryId:category.id))
-            .response {res in
-                debugPrint(res)
-                guard let value = res.value else { return}
-                print(value)
-            }
+
             .responseDecodable(of: [GetImageResponse].self) { res in
-                print(res)
+                if let imagesResponse = res.value {
+                                self.imageUrls = imagesResponse.map { $0.url }
+                            }
 //                self.images = res.value!.url
             }
     }
@@ -52,7 +50,12 @@ class CategoryViewModel: ObservableObject {
         }, to: API.baseURL+"/room/\(roomid)/categories/\(category.id)"
                   , method: .post, headers: API.headerWithmultiPart)
         .response { res in
-            debugPrint(res)
+            switch res.result {
+            case .success(let _):
+                self.getDetailImages(category: category)
+            case .failure(let err):
+                print(err)
+            }
         }
     }
     private func setImage(from selection: PhotosPickerItem?) {

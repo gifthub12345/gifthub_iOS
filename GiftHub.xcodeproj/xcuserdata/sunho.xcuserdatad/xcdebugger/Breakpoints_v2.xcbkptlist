@@ -588,24 +588,8 @@
             filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "getDetailImages(category:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8739E0E2-5043-4468-8161-633C49A5BD58"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "getDetailImages(category:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -620,8 +604,8 @@
             filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "getDetailImages(category:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -636,8 +620,8 @@
             filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "recongziedText(image:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -652,8 +636,8 @@
             filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "postImage(category:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -668,8 +652,8 @@
             filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "postImage(category:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -684,8 +668,8 @@
             filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "postImage(category:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -703,6 +687,22 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "getDetailImages(category:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B73ACCD-8AB4-4196-8F3E-6E616E37053E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GiftHub/Presentation/CategoryDetailView/CategoryViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "postImage(category:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
