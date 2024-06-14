@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryView: View {
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+    @StateObject private var viewModel = MainViewModel()
     @Binding var path: NavigationPath
     @State var roomId: Int
 
@@ -35,14 +36,15 @@ struct CategoryView: View {
                     })
                 }
                 ToolbarItem(placement: .principal) {
-                    Text("방제목(구성수)")
+                    Text(viewModel.roomTitle)
                 }
             }
             .onAppear {
                 if let keychainId = KeychainManager.shared.readToken(key: "roomId") {
                     self.roomId = Int(keychainId) ?? 0
                 }
-               
+                viewModel.getTitle(roomId: self.roomId)
+
             }
     }
 

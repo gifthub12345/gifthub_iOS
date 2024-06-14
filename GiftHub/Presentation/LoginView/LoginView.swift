@@ -49,7 +49,7 @@ struct LoginView: View {
                 case .detailView(let detail, let roomId):
                     CategoryDetailView(viewModel: CategoryViewModel(roomid: roomId), category: detail)
                 case .setting:
-                    SettingView()
+                    SettingView(path: $navigationPath)
                 }
             }
         }     .onChange(of: viewmodel.navigationState) { newState in

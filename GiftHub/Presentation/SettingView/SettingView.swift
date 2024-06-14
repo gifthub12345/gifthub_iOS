@@ -28,15 +28,54 @@ enum Settings: CaseIterable {
     }
 }
 struct SettingView: View {
+    @StateObject private var viewModel = SettingViewModel()
+    @State private var showingAlert = false
+    @Binding var path: NavigationPath
 
+    @Environment(\.presentationMode) var presentationMode
+       @Environment(\.dismiss) var dismiss
     var body: some View {
         List(Settings.allCases, id: \.self) { setting in
             Text(setting.title)
+                .onTapGesture {
+                    handleSettingTap(setting)
+                }
         }.listStyle(.plain)
         .navigationTitle("설정")
+        .alert(isPresented: $showingAlert) {
+                   Alert(
+                       title: Text("회원탈퇴"),
+                       message: Text("정말 계정을 삭제하시겠습니까?"),
+                       primaryButton: .destructive(Text("예")) {
+                           deleteUser()
+                       },
+                       secondaryButton: .cancel(Text("취소"))
+                   )
+               }
+    }
+    private func handleSettingTap(_ setting: Settings) {
+        switch setting {
+        case .lookCode:
+            break
+        case .lookParticipant:
+            break
+        case .outRoom:
+            break
+        case .logout:
+            break
+        case .delete:
+            showingAlert = true
+        }
+    }
+    private func deleteUser() {
+        viewModel.deleteUser { success in
+            if success {
+                path.removeLast(2)
+            } else {
+                // Handle deletion failure if needed
+                path.removeLast(2)
+            }
+        }
     }
 }
 
-#Preview {
-    SettingView()
-}

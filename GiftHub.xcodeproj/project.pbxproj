@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		C73730402BFDB41100187EEF /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C737303F2BFDB41100187EEF /* AuthResponse.swift */; };
 		C73730432BFDB46E00187EEF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73730422BFDB46E00187EEF /* KeychainManager.swift */; };
+		C73DE17C2C1C16AC0018CDEF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DE17B2C1C16AC0018CDEF /* MainViewModel.swift */; };
+		C73DE17E2C1C22AE0018CDEF /* RoomTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DE17D2C1C22AD0018CDEF /* RoomTitleResponse.swift */; };
+		C73DE1802C1C30EB0018CDEF /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DE17F2C1C30EB0018CDEF /* SettingViewModel.swift */; };
+		C73DE1882C1C39EB0018CDEF /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DE1872C1C39EB0018CDEF /* ShareViewController.swift */; };
+		C73DE18B2C1C39EB0018CDEF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C73DE18A2C1C39EB0018CDEF /* Base */; };
+		C73DE18F2C1C39EB0018CDEF /* group.GiftHub.share.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C73DE1852C1C39EB0018CDEF /* group.GiftHub.share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C74E60DC2C0C9E7E002C7DEB /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E60DB2C0C9E7E002C7DEB /* LoginResponse.swift */; };
 		C7816B712BFDA0F100F6659F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7816B702BFDA0F100F6659F /* ContentView.swift */; };
 		C7816B7D2BFDA2CD00F6659F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7816B7C2BFDA2CD00F6659F /* Alamofire */; };
@@ -46,7 +52,28 @@
 		C7FC37282C0DED6100C2BB30 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C7FC37272C0DED6100C2BB30 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C73DE18D2C1C39EB0018CDEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7BD5B042BE75D6B0060CC38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C73DE1842C1C39EB0018CDEF;
+			remoteInfo = group.GiftHub.share;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		C73DE1932C1C39EB0018CDEF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C73DE18F2C1C39EB0018CDEF /* group.GiftHub.share.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7816B6F2BFD9F4F00F6659F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,6 +89,13 @@
 /* Begin PBXFileReference section */
 		C737303F2BFDB41100187EEF /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		C73730422BFDB46E00187EEF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		C73DE17B2C1C16AC0018CDEF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C73DE17D2C1C22AD0018CDEF /* RoomTitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTitleResponse.swift; sourceTree = "<group>"; };
+		C73DE17F2C1C30EB0018CDEF /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		C73DE1852C1C39EB0018CDEF /* group.GiftHub.share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = group.GiftHub.share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C73DE1872C1C39EB0018CDEF /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		C73DE18A2C1C39EB0018CDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C73DE18C2C1C39EB0018CDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74E60DB2C0C9E7E002C7DEB /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		C7816B702BFDA0F100F6659F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7816B7E2BFDA7B000F6659F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -100,6 +134,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C73DE1822C1C39EB0018CDEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7BD5B092BE75D6B0060CC38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,6 +160,7 @@
 				C7FC37202C0CD68A00C2BB30 /* MakeRoomResponse.swift */,
 				C74E60DB2C0C9E7E002C7DEB /* LoginResponse.swift */,
 				C7FC37222C0D7A6F00C2BB30 /* GetImageResponse.swift */,
+				C73DE17D2C1C22AD0018CDEF /* RoomTitleResponse.swift */,
 				C7FC37242C0DAF2E00C2BB30 /* GiftRequest.swift */,
 			);
 			path = Model;
@@ -132,6 +174,16 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		C73DE1862C1C39EB0018CDEF /* group.GiftHub.share */ = {
+			isa = PBXGroup;
+			children = (
+				C73DE1872C1C39EB0018CDEF /* ShareViewController.swift */,
+				C73DE1892C1C39EB0018CDEF /* MainInterface.storyboard */,
+				C73DE18C2C1C39EB0018CDEF /* Info.plist */,
+			);
+			path = group.GiftHub.share;
+			sourceTree = "<group>";
+		};
 		C7816B752BFDA17A00F6659F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				C7BD5B0E2BE75D6B0060CC38 /* GiftHub */,
+				C73DE1862C1C39EB0018CDEF /* group.GiftHub.share */,
 				C7BD5B0D2BE75D6B0060CC38 /* Products */,
 				C7816B752BFDA17A00F6659F /* Frameworks */,
 			);
@@ -152,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				C7BD5B0C2BE75D6B0060CC38 /* GiftHub.app */,
+				C73DE1852C1C39EB0018CDEF /* group.GiftHub.share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				C7C294502BEF7120009FACD8 /* GiftHub.entitlements */,
-				C7C294592BEFBFC4009FACD8 /* Services */,
+				C7C294592BEFBFC4009FACD8 /* Data */,
 				C7BD5B272BE77A730060CC38 /* Utils */,
 				C7BD5B1D2BE75F6F0060CC38 /* Presentation */,
 				C7BD5B0F2BE75D6B0060CC38 /* GiftHubApp.swift */,
@@ -244,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				C7BD5B352BE78A5C0060CC38 /* CategoryView.swift */,
+				C73DE17B2C1C16AC0018CDEF /* MainViewModel.swift */,
 				C7BD5B372BE7908C0060CC38 /* CategoryGridView.swift */,
 			);
 			path = CategoryView;
@@ -283,18 +338,19 @@
 			isa = PBXGroup;
 			children = (
 				C7C294572BEF790C009FACD8 /* SettingView.swift */,
+				C73DE17F2C1C30EB0018CDEF /* SettingViewModel.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
 		};
-		C7C294592BEFBFC4009FACD8 /* Services */ = {
+		C7C294592BEFBFC4009FACD8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				C737303E2BFDB40700187EEF /* Model */,
 				C7BE5C072BFC664F007B1D3D /* Network */,
 				C7C2945A2BEFBFD0009FACD8 /* Container */,
 			);
-			path = Services;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C7C2945A2BEFBFD0009FACD8 /* Container */ = {
@@ -326,6 +382,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C73DE1842C1C39EB0018CDEF /* group.GiftHub.share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C73DE1902C1C39EB0018CDEF /* Build configuration list for PBXNativeTarget "group.GiftHub.share" */;
+			buildPhases = (
+				C73DE1812C1C39EB0018CDEF /* Sources */,
+				C73DE1822C1C39EB0018CDEF /* Frameworks */,
+				C73DE1832C1C39EB0018CDEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = group.GiftHub.share;
+			productName = group.GiftHub.share;
+			productReference = C73DE1852C1C39EB0018CDEF /* group.GiftHub.share.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C7BD5B0B2BE75D6B0060CC38 /* GiftHub */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7BD5B1A2BE75D6C0060CC38 /* Build configuration list for PBXNativeTarget "GiftHub" */;
@@ -334,10 +407,12 @@
 				C7BD5B092BE75D6B0060CC38 /* Frameworks */,
 				C7BD5B0A2BE75D6B0060CC38 /* Resources */,
 				C7816B6F2BFD9F4F00F6659F /* Embed Frameworks */,
+				C73DE1932C1C39EB0018CDEF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C73DE18E2C1C39EB0018CDEF /* PBXTargetDependency */,
 			);
 			name = GiftHub;
 			packageProductDependencies = (
@@ -358,6 +433,9 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					C73DE1842C1C39EB0018CDEF = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					C7BD5B0B2BE75D6B0060CC38 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -381,11 +459,20 @@
 			projectRoot = "";
 			targets = (
 				C7BD5B0B2BE75D6B0060CC38 /* GiftHub */,
+				C73DE1842C1C39EB0018CDEF /* group.GiftHub.share */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C73DE1832C1C39EB0018CDEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C73DE18B2C1C39EB0018CDEF /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7BD5B0A2BE75D6B0060CC38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +485,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C73DE1812C1C39EB0018CDEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C73DE1882C1C39EB0018CDEF /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7BD5B082BE75D6B0060CC38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,8 +501,10 @@
 				C7BE5C092BFC6667007B1D3D /* API.swift in Sources */,
 				C7FC37252C0DAF2E00C2BB30 /* GiftRequest.swift in Sources */,
 				C7816B712BFDA0F100F6659F /* ContentView.swift in Sources */,
+				C73DE17E2C1C22AE0018CDEF /* RoomTitleResponse.swift in Sources */,
 				C7FC37232C0D7A6F00C2BB30 /* GetImageResponse.swift in Sources */,
 				C7BD5B382BE7908C0060CC38 /* CategoryGridView.swift in Sources */,
+				C73DE1802C1C30EB0018CDEF /* SettingViewModel.swift in Sources */,
 				C7C2945E2BEFD38C009FACD8 /* MakeRoomDialogViewModel.swift in Sources */,
 				C7BD5B2D2BE77B000060CC38 /* DialogPresentation.swift in Sources */,
 				C7C2944D2BEF21D1009FACD8 /* CategoryViewModel.swift in Sources */,
@@ -427,6 +524,7 @@
 				C7BD5B232BE761460060CC38 /* NoEnterView.swift in Sources */,
 				C73730402BFDB41100187EEF /* AuthResponse.swift in Sources */,
 				C7BD5B332BE786A00060CC38 /* JoinDialogView.swift in Sources */,
+				C73DE17C2C1C16AC0018CDEF /* MainViewModel.swift in Sources */,
 				C7BD5B2B2BE77AA50060CC38 /* CustomDialog.swift in Sources */,
 				C7BE5C122BFC725C007B1D3D /* RouterProtocol.swift in Sources */,
 				C7BD5B102BE75D6B0060CC38 /* GiftHubApp.swift in Sources */,
@@ -440,7 +538,76 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C73DE18E2C1C39EB0018CDEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C73DE1842C1C39EB0018CDEF /* group.GiftHub.share */;
+			targetProxy = C73DE18D2C1C39EB0018CDEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C73DE1892C1C39EB0018CDEF /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C73DE18A2C1C39EB0018CDEF /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		C73DE1912C1C39EB0018CDEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NG2NLR2Z86;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = group.GiftHub.share/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = group.GiftHub.share;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GiftHub.main.group-GiftHub-share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C73DE1922C1C39EB0018CDEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NG2NLR2Z86;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = group.GiftHub.share/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = group.GiftHub.share;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GiftHub.main.group-GiftHub-share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C7BD5B182BE75D6C0060CC38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -563,6 +730,7 @@
 		C7BD5B1B2BE75D6C0060CC38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GiftHub/GiftHub.entitlements;
@@ -593,6 +761,7 @@
 		C7BD5B1C2BE75D6C0060CC38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GiftHub/GiftHub.entitlements;
@@ -623,6 +792,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C73DE1902C1C39EB0018CDEF /* Build configuration list for PBXNativeTarget "group.GiftHub.share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C73DE1912C1C39EB0018CDEF /* Debug */,
+				C73DE1922C1C39EB0018CDEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C7BD5B072BE75D6B0060CC38 /* Build configuration list for PBXProject "GiftHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
