@@ -46,7 +46,7 @@ extension APICase: Router, URLRequestConvertible {
         case .requestCategoryList(let roomId, let categoryId):
             "/room/\(roomId)/categories/\(categoryId)"
         case .requestRemoveImage(let roomid, let categoryId, let giftconId):
-            "/room/\(roomid)/categories/\(categoryId)/\(giftconId)"
+            "/room/\(roomid)/categories/\(categoryId)/gifticons/\(giftconId)"
         case .requestDeleteMember:
             "/revoke"
         }

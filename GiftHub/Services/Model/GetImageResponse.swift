@@ -6,8 +6,9 @@
 //
 
 import Foundation
-struct GetImageResponse: Decodable {
+struct GetImageResponse: Decodable, Identifiable {
     var url: String
+    var id: Int
 }
 
 //struct ImageUrl: Decodable {

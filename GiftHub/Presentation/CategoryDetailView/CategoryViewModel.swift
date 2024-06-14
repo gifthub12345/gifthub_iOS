@@ -10,6 +10,7 @@ import VisionKit
 import SwiftUI
 import PhotosUI
 import Alamofire
+import Combine
 
 class CategoryViewModel: ObservableObject {
     @Published var expireOCRString: String = ""
@@ -21,6 +22,8 @@ class CategoryViewModel: ObservableObject {
         }
     }
     @Published var imageUrls: [String] = []
+    @Published var imageDetails: [GetImageResponse] = []
+    var deleteResultPublisher = PassthroughSubject<Bool, Never>()
     private var barcodeOCRString: String = ""
     var roomid: Int
 //    var categoryId: Int
@@ -30,13 +33,29 @@ class CategoryViewModel: ObservableObject {
     }
     func getDetailImages(category: Category) {
         AF.request(APICase.requestCategoryList(roomid: roomid, categoryId:category.id))
+            .response{ data in
+                debugPrint(data)
 
+            }
             .responseDecodable(of: [GetImageResponse].self) { res in
                 if let imagesResponse = res.value {
-                                self.imageUrls = imagesResponse.map { $0.url }
+                    self.imageDetails  = imagesResponse
                             }
 //                self.images = res.value!.url
             }
+    }
+    func deletetoServer(category: Category, giftconId: Int) {
+        AF.request(APICase.requestRemoveImage(roomid: roomid, categoryId: category.id, giftconId: giftconId))
+            .response { response in
+                switch response.result {
+                case .success:
+                    self.getDetailImages(category: category)
+                    self.deleteResultPublisher.send(true)
+                case .failure:
+                    self.deleteResultPublisher.send(false)
+                }
+            }
+
     }
     func postImage(category: Category) {
         guard let selectedImage = selectedImage else {return}

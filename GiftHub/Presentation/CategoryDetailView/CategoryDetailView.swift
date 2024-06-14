@@ -14,6 +14,9 @@ struct CategoryDetailView: View {
     //    @State private var dialogPresentation = DialogPresentation()
     @State private var isFullScreen = false
     @State private var selectedImageURL: String? // 전체화면에 표시할 이미지 URL
+    @State private var imageURLToDelete: String?
+    @State private var selectedImageID: Int?
+    @State private var showAlert = false
     var category: Category
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     var body: some View {
@@ -23,7 +26,7 @@ struct CategoryDetailView: View {
                 KFImage(URL(string: selectedImage))
                     .resizable()
                     .scaledToFill()
-//                    .frame(width: .infinity, height: .infinity)
+                //                    .frame(width: .infinity, height: .infinity)
                     .gesture(DragGesture(minimumDistance: 0,coordinateSpace: .local)
                         .onEnded({ value in
                             if value.translation.width < 0 {
@@ -33,29 +36,28 @@ struct CategoryDetailView: View {
                             else if value.translation.width > 0 {
                                 //right
                                 print("right")
+                                showAlert.toggle()
                             }
                         })).navigationBarBackButtonHidden()
             }
             else {
                 ScrollView {
-                    
-                    
-                    
                     LazyVGrid(columns: columns){
-                        ForEach(viewModel.imageUrls, id: \.self) { imageUrl in
-                            KFImage(URL(string: imageUrl))
+                        ForEach(viewModel.imageDetails) { imageUrl in
+                            KFImage(URL(string: imageUrl.url))
                                 .resizable()
                                 .scaledToFill()
                                 .aspectRatio(contentMode: .fit)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                                 .padding(4)
                                 .onTapGesture {
-                                    selectedImageURL = imageUrl
+                                    selectedImageURL = imageUrl.url
+                                    selectedImageID = imageUrl.id
                                     isFullScreen.toggle()
                                 }
                         }
                     }
-                    
+
                 }.navigationBarTitleDisplayMode(.large)
                     .navigationTitle(category.rawValue)
                     .customDialog(presentationManager: container.dialogPresentation)
@@ -80,12 +82,26 @@ struct CategoryDetailView: View {
                     }
             }
         }
-        
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("사용하셨습니까?"),
+                  primaryButton: .destructive(Text("예")) {
+                if let selectid = selectedImageID {
+                    viewModel.deletetoServer(category: category, giftconId: selectid)
+
+                }
+            }, secondaryButton: .cancel())
+        }
+        .onReceive(viewModel.deleteResultPublisher) { success in
+                   if success {
+                       selectedImageID = nil
+                       selectedImageURL = nil
+                   }
+               }
         .onChange(of: viewModel.isSucceed, { oldValue, newValue in
             if newValue == true{
                 if let selectedImage = viewModel.selectedImage {
                     container.dialogPresentation.show(content: .addGiftDialog(image: selectedImage, expirationDate: viewModel.expireOCRString, isPresented: $dialogPresentation.isPresented, viewModel: viewModel, category: category))
-                    
+
                 }
             }
         })
@@ -98,7 +114,7 @@ struct CategoryDetailView: View {
             viewModel.getDetailImages(category: category)
         }
     }
-    
+
 }
 //
 //#Preview {
